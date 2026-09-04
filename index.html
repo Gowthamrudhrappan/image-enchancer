@@ -636,7 +636,7 @@
   let tfjsPromise = null;
   function ensureTfjs(){
     if (!tfjsPromise){
-      tfjsPromise = loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js');
+      tfjsPromise = loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js');
     }
     return tfjsPromise;
   }
@@ -644,7 +644,7 @@
   let upscalerLibPromise = null;
   function ensureUpscalerLib(){
     if (!upscalerLibPromise){
-      upscalerLibPromise = loadScript('https://cdn.jsdelivr.net/npm/upscaler@1.0.0-beta.20/dist/browser/umd/upscaler.min.js');
+      upscalerLibPromise = loadScript('https://cdn.jsdelivr.net/npm/upscaler@latest/dist/browser/umd/upscaler.min.js');
     }
     return upscalerLibPromise;
   }
@@ -661,7 +661,7 @@
     },
     upscale: {
       label: 'Upscale (ESRGAN)',
-      scriptUrl: 'https://cdn.jsdelivr.net/npm/@upscalerjs/default-model@1.0.0-beta.17/dist/umd/index.min.js',
+      scriptUrl: 'https://cdn.jsdelivr.net/npm/@upscalerjs/default-model@latest/dist/umd/index.min.js',
       globalName: 'DefaultUpscalerJSModel',
       loadingMessage: 'Loading upscaling model (first run only)…'
     }
