@@ -281,7 +281,7 @@
           <button class="primary" id="aiRunBtn">Run AI restore</button>
         </div>
         <div class="engine-note" id="aiEngineNote">
-          Free, open-source AI upscaling (ESRGAN) that runs entirely in this browser tab — no account, no key, no server, nothing uploaded. First run downloads a small model (a few MB) and takes a few seconds; after that it's fast. It can genuinely recover plausible detail a classical filter can't, but on very degraded sources it's reconstructing texture, not reading your camera's original pixels — treat it as a best guess, not a guarantee.
+          Free, open-source AI upscaling (ESRGAN) that runs entirely in this browser tab — no account, no key, no server, nothing uploaded. First run downloads a small model (a few MB) and takes a few seconds; after that it's fast. It genuinely reconstructs plausible texture — real detail recovery, not just amplification — but it's a super-resolution model, not a deblur model: on a source that's actually out-of-focus (not just small/compressed), it will upscale the blur rather than remove it. True face-deblurring needs a model trained for that specifically (GFPGAN); the reliable way to get that is a small paid hosted model — see the README for the ready-to-deploy path.
         </div>
       </div>
       <div class="btn-row">
