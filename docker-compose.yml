@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist downloaded model weights across restarts/rebuilds —
+      # without this, every `docker compose up --build` re-downloads
+      # ~400MB of GFPGAN/Real-ESRGAN weights.
+      - ./backend/weights:/app/weights
+    environment:
+      # Loosen for local testing; tighten to your real frontend origin
+      # before deploying this anywhere public.
+      - CLARITY_ALLOWED_ORIGINS=*
+
+  frontend:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    depends_on:
+      - backend
